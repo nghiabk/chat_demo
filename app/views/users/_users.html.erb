@@ -1,0 +1,18 @@
+<div class="row" id="users">
+  <div class="col-md-4">
+    <div class="panel panel-success">
+      <div class="panel-heading">All of users</div>
+      <table class="table table-striped">
+        <tbody>
+          <% @users.each_with_index do |user, index| %>
+            <tr>
+              <td><%= image_tag "http://placehold.it/40x40", class: "media-object" %></td>
+              <td><%= user.name %></td>
+              <td><%= link_to "Send message", "#", class: "btn btn-success start-conversation", "data-sid" => current_user.id, "data-rid" => user.id %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
